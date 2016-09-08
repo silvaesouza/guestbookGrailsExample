@@ -46,7 +46,7 @@
 					
 						<td><g:formatDate date="${commentInstance.dateCreated}" /></td>
 					
-						<td>${fieldValue(bean: commentInstance, field: "feedback")}</td>
+						<td>${fieldValue(bean: commentInstance, field: "feedback.title")}</td>
 					
 						<td><g:formatDate date="${commentInstance.lastUpdated}" /></td>
 					

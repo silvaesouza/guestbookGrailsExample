@@ -1,5 +1,8 @@
 package br.com.silvaesouza.guestbook
 
+import groovy.transform.ToString;
+
+@ToString(includeFields=true)
 class Feedback {
 
     String title
