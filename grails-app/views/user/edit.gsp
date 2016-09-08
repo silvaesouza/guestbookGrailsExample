@@ -1,4 +1,4 @@
-<%@ page import="com.br.silvaesouza.guestbook.User" %>
+<%@ page import="br.com.silvaesouza.guestbook.User" %>
 <!DOCTYPE html>
 <html>
 	<head>

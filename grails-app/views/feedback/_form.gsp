@@ -1,4 +1,4 @@
-<%@ page import="com.br.silvaesouza.guestbook.Feedback" %>
+<%@ page import="br.com.silvaesouza.guestbook.Feedback" %>
 
 
 
