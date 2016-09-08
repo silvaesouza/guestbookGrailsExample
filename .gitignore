@@ -1,0 +1,14 @@
+.*
+!.gitignore
+
+#
+# java
+#
+*.class
+target/
+target-eclipse/
+bin/
+src/main/webapp/WEB-INF/classes/
+*.jar
+src/main/webapp/WEB-INF/lib/
+*Ignored.java
