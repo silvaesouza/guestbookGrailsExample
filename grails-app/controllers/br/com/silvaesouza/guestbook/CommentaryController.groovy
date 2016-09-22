@@ -4,11 +4,11 @@ package br.com.silvaesouza.guestbook
 
 //import static org.springframework.http.HttpStatus
 
-import br.com.silvaesouza.guestbook.Comment;
+import br.com.silvaesouza.guestbook.Commentary;
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
-class CommentController {
+class CommentaryController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 	
@@ -16,19 +16,19 @@ class CommentController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Comment.list(params), model:[commentInstanceCount: Comment.count()]
+        [commentInstanceList:Commentary.list(params), model:[commentInstanceCount: Commentary.count()]]
     }
 
-    def show(Comment commentInstance) {
-        respond commentInstance
+    def show(Commentary commentInstance) {
+        [commentInstance:commentInstance]
     }
 
     def create() {
-        respond new Comment(params)
+        respond new Commentary(params)
     }
 
     @Transactional
-    def save(Comment commentInstance) {
+    def save(Commentary commentInstance) {
         if (commentInstance == null) {
             notFound()
             return
@@ -50,12 +50,12 @@ class CommentController {
         }
     }
 
-    def edit(Comment commentInstance) {
-        respond commentInstance
+    def edit(Commentary commentInstance) {
+        [commentInstance:commentInstance]
     }
 
     @Transactional
-    def update(Comment commentInstance) {
+    def update(Commentary commentInstance) {
         if (commentInstance == null) {
             notFound()
             return
@@ -78,7 +78,7 @@ class CommentController {
     }
 
     @Transactional
-    def delete(Comment commentInstance) {
+    def delete(Commentary commentInstance) {
 
         if (commentInstance == null) {
             notFound()

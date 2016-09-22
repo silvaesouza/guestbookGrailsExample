@@ -12,7 +12,7 @@ class Feedback {
 
 	// relationsship to the other classes
 	User user
-	static hasMany=[comments:Comment]
+	static hasMany=[comments:Commentary]
 
 	// contrains are defined as static 
 	static constraints = {

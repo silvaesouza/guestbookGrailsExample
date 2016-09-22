@@ -1,5 +1,4 @@
-
-<%@ page import="br.com.silvaesouza.guestbook.Comment" %>
+<%@ page import="br.com.silvaesouza.guestbook.Commentary" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -23,11 +22,11 @@
 			</g:if>
 			<ol class="property-list comment">
 			
-				<g:if test="${commentInstance?.comment}">
+				<g:if test="${commentInstance?.commentary}">
 				<li class="fieldcontain">
 					<span id="comment-label" class="property-label"><g:message code="comment.comment.label" default="Comment" /></span>
 					
-						<span class="property-value" aria-labelledby="comment-label"><g:fieldValue bean="${commentInstance}" field="comment"/></span>
+						<span class="property-value" aria-labelledby="comment-label"><g:fieldValue bean="${commentInstance}" field="commentary"/></span>
 					
 				</li>
 				</g:if>

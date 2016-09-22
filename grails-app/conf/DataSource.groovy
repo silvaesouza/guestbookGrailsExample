@@ -12,6 +12,8 @@ hibernate {
     cache.region.factory_class = 'org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory' // Hibernate 4
     singleSession = true // configure OSIV singleSession mode
     flush.mode = 'manual' // OSIV session flush mode outside of transactional context
+	
+	jdbc.use_get_generated_keys = true
 }
 
 // environment specific settings
@@ -22,6 +24,19 @@ environments {
             url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
         }
     }
+	
+	local {
+		dataSource {
+			dbCreate = 'create'
+			driverClassName = 'oracle.jdbc.driver.OracleDriver'
+			dialect= 'org.hibernate.dialect.Oracle9Dialect'
+			url = 'jdbc:oracle:thin:@localhost:1521/XE'
+			username = 'silvaesouza'
+			password = '1234'
+			pooled = false
+		}
+	}
+	
     test {
         dataSource {
             dbCreate = "update"

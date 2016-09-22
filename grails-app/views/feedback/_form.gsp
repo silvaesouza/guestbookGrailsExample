@@ -37,10 +37,10 @@
 	
 <ul class="one-to-many">
 <g:each in="${feedbackInstance?.comments?}" var="c">
-    <li><g:link controller="comment" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
+    <li><g:link controller="commentary" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
 </g:each>
 <li class="add">
-<g:link controller="comment" action="create" params="['feedback.id': feedbackInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'comment.label', default: 'Comment')])}</g:link>
+<g:link controller="commentary" action="create" params="['feedback.id': feedbackInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'comment.label', default: 'Comment')])}</g:link>
 </li>
 </ul>
 

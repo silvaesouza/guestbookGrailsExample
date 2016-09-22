@@ -1,8 +1,8 @@
 package br.com.silvaesouza.guestbook
 
-class Comment {
-
-    String comment
+class Commentary {
+	
+    String commentary
 	Date dateCreated // Predefined names by Grails will be filled automatically
 	Date lastUpdated // Predefined names by Grails will be filled automatically
 
@@ -11,15 +11,15 @@ class Comment {
 	static belongsTo=[feedback:Feedback]
 
 	static constraints = {
-	comment (blank:false, nullable: false, size:5..500)
-	user (nullable: true) // Comments are allowed without a user
+		commentary (blank:false, nullable: false, size:5..500)
+		user (nullable: true) // Comments are allowed without a user
 	}
 
 	String toString(){
-	if (comment?.size()>20){
-	  return comment.substring(0,19);
+	if (commentary?.size()>20){
+		return commentary.substring(0,19);
 	} else 
-	return comment; 
+		return commentary; 
 	}
 	
 }

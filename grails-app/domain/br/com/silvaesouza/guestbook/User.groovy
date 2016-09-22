@@ -2,18 +2,36 @@ package br.com.silvaesouza.guestbook
 
 class User {
 
+	Integer id
     String name
 	String email
 	String webpage
+	String login
+	String password
+	String enabled
+	
+	static mapping = {
+		table 'nbs_user'
+		id column: 'USER_ID', generator:'native', params:[sequence:'nbs_user_s']
+		name column: 'USER_NAME'
+		email column: 'USER_EMAIL'
+		login column: 'USER_LOGIN'
+		password column: 'USER_PASSWORD'
+		enabled column: 'ENABLED_FLAG'
+	}
 
 	static constraints = {
-	name (blank:false, nullable:false, size:3..30, matches:"[a-zA-Z1-9_]+") 
-	email (email:true)
-	webpage (url:true)
+		id (nullable:true)
+		name (blank:false, nullable:false, size:3..30, matches:"[a-zA-Z1-9_]+") 
+		email (email:true)
+		webpage (nullable:true, url:true)
+		login(nullable:true)
+		password(nullable:true)
+		enabled(nullable:true)
 	}
 
 	String toString(){
-	return name; 
+		return name; 
 	}
 	
 }

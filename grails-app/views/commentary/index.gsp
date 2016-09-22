@@ -1,5 +1,5 @@
 
-<%@ page import="br.com.silvaesouza.guestbook.Comment" %>
+<%@ page import="br.com.silvaesouza.guestbook.Commentary" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -40,7 +40,7 @@
 				<g:each in="${commentInstanceList}" status="i" var="commentInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${commentInstance.id}">${fieldValue(bean: commentInstance, field: "comment")}</g:link></td>
+						<td><g:link action="show" id="${commentInstance.id}">${fieldValue(bean: commentInstance, field: "commentary")}</g:link></td>
 					
 						<td>${fieldValue(bean: commentInstance, field: "user")}</td>
 					

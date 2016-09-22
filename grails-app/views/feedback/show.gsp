@@ -55,7 +55,7 @@
 					<span id="comments-label" class="property-label"><g:message code="feedback.comments.label" default="Comments" /></span>
 					
 						<g:each in="${feedbackInstance.comments}" var="c">
-						<span class="property-value" aria-labelledby="comments-label"><g:link controller="comment" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="comments-label"><g:link controller="commentary" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>

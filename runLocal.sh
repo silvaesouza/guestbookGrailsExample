@@ -1,0 +1,1 @@
+grails -Dgrails.env=local -Dserver.port=8180 run-app
