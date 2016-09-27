@@ -27,7 +27,19 @@ environments {
 	
 	local {
 		dataSource {
-			dbCreate = 'create'
+			dbCreate = 'none'//'create-drop'
+			driverClassName = 'oracle.jdbc.driver.OracleDriver'
+			dialect= 'org.hibernate.dialect.Oracle9Dialect'
+			url = 'jdbc:oracle:thin:@localhost:1521/XE'
+			username = 'silvaesouza'
+			password = '1234'
+			pooled = false
+		}
+	}
+	
+	local_drop {
+		dataSource {
+			dbCreate = 'create-drop'
 			driverClassName = 'oracle.jdbc.driver.OracleDriver'
 			dialect= 'org.hibernate.dialect.Oracle9Dialect'
 			url = 'jdbc:oracle:thin:@localhost:1521/XE'
@@ -39,8 +51,13 @@ environments {
 	
     test {
         dataSource {
-            dbCreate = "update"
-            url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            dbCreate = 'none'
+			driverClassName = 'oracle.jdbc.driver.OracleDriver'
+			dialect= 'org.hibernate.dialect.Oracle9Dialect'
+			url = 'jdbc:oracle:thin:@localhost:1521/XE'
+			username = 'silvaesouza'
+			password = '1234'
+			pooled = false
         }
     }
     production {

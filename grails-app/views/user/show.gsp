@@ -41,14 +41,30 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${userInstance?.webpage}">
+				<g:if test="${userInstance?.login}">
 				<li class="fieldcontain">
-					<span id="webpage-label" class="property-label"><g:message code="user.webpage.label" default="Webpage" /></span>
+					<span id="webpage-label" class="property-label"><g:message code="user.login.label" default="Login" /></span>
 					
-						<span class="property-value" aria-labelledby="webpage-label"><g:fieldValue bean="${userInstance}" field="webpage"/></span>
+						<span class="property-value" aria-labelledby="webpage-label"><g:fieldValue bean="${userInstance}" field="login"/></span>
 					
 				</li>
 				</g:if>
+				
+				<g:if test="${userInstance?.password}">
+				<li class="fieldcontain">
+					<span id="webpage-label" class="property-label"><g:message code="user.password.label" default="Senha" /></span>
+					
+						<span class="property-value" aria-labelledby="webpage-label"><g:field type="password" name="password" disabled="disabled" bean="${userInstance}" field="password"/></span>
+					
+				</li>
+				</g:if>
+				
+				<li class="fieldcontain">
+					<span id="webpage-label" class="property-label"><g:message code="user.enabled.label" default="Habilitado" /></span>
+						<span class="property-value" aria-labelledby="webpage-label">
+							<g:checkBox name="enabled" value="${userInstance.enabled}" bean="${userInstance}" field="enabled" disabled="disabled" />
+						</span>
+				</li>
 			
 			</ol>
 			<g:form url="[resource:userInstance, action:'delete']" method="DELETE">

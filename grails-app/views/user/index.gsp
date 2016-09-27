@@ -28,7 +28,11 @@
 					
 						<g:sortableColumn property="email" title="${message(code: 'user.email.label', default: 'Email')}" />
 					
-						<g:sortableColumn property="webpage" title="${message(code: 'user.webpage.label', default: 'Webpage')}" />
+						<g:sortableColumn property="login" title="${message(code: 'user.login.label', default: 'Login')}" />
+						
+						<g:sortableColumn property="password" title="${message(code: 'user.password.label', default: 'Senha')}" />
+						
+						<g:sortableColumn property="enabled" title="${message(code: 'user.enabled.label', default: 'Habilitado')}" />
 					
 					</tr>
 				</thead>
@@ -40,7 +44,11 @@
 					
 						<td>${fieldValue(bean: userInstance, field: "email")}</td>
 					
-						<td>${fieldValue(bean: userInstance, field: "webpage")}</td>
+						<td>${fieldValue(bean: userInstance, field: "login")}</td>
+						
+						<td>${fieldValue(bean: userInstance, field: "password")}</td>
+						
+						<td>${fieldValue(bean: userInstance, field: "enabled")}</td>
 					
 					</tr>
 				</g:each>

@@ -20,12 +20,28 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'webpage', 'error')} required">
-	<label for="webpage">
-		<g:message code="user.webpage.label" default="Webpage" />
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'login', 'error')} required">
+	<label for="login">
+		<g:message code="user.login.label" default="Login" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="url" name="webpage" required="" value="${userInstance?.webpage}"/>
+	<g:field type="login" name="login" required="" value="${userInstance?.login}"/>
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'password', 'error')} required">
+	<label for="login">
+		<g:message code="user.password.label" default="Senha" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:passwordField type="password" name="password" required="" value="${userInstance?.password}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'enabled', 'error')} ">
+	<label for="enabled">
+		<g:message code="user.enabled.label" default="Habilitado" />
+	</label>
+	<g:checkBox name="enabled" value="${userInstance?.enabled}"/>
+
+</div>
